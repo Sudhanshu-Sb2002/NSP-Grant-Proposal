@@ -1,16 +1,17 @@
-# This is a sample Python script.
+from Input_function import import_data1
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.signal as sp
+[data,time]=import_data1(None)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from pyhht.visualization import plot_imfs
+from pyhht import EMD
+decomposer = EMD(data[0])
+imfs = decomposer.decompose()
+plot_imfs(data[0], imfs, time[0]);
+x=sp.hilbert(imfs[0])
+for imf in imfs[1:]:
+    x+=sp.hilbert(imf)
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+plt.plot(x)
+plt.show()
