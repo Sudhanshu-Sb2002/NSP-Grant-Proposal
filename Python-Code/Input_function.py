@@ -1,9 +1,9 @@
 # First we need to import matlab .mat data files uisng scipy
 import scipy.io as sio
 import numpy as np
+import torch
 import matplotlib.pyplot as plt
-
-
+#rawdata = sio.loadmat(path)
 def import_data1(path=None):
     if path is None:
         time=np.linspace(0,20,1000)
