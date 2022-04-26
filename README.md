@@ -35,7 +35,6 @@ _These are the proceedure we have used_
      </ul>
     </li>
   <li>Neural Network
-
      To find the right combination of these parameters, We train a basic Neurla Network with 1 hidden layer. The Neural Network is (11 X 5 X 1), with L1 regularisation in the First Layer(so that parameters that are partciularly not useful are discarded) 
   </li>
 </ol>
