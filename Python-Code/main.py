@@ -37,7 +37,7 @@ class Net(nn.Module):
         n1 = 5
         n2=1
         super(Net, self).__init__()  # calling base class
-        self.fc1 = nn.Linear(n0, n1,bias=False)  # input is 11x1
+        self.fc1 = nn.Linear(n0, n1,bias=True)  # input is 11x1
         # self.init_weights(self.fc1)
         nn.init.xavier_uniform_(self.fc1.weight)
         # print(self.fc1.weight)
@@ -75,8 +75,9 @@ params = list(net.parameters())
 print(type(train_labels[0][0]))
 
 optimizer = optim.SGD(net.parameters(), lr=0.005)
-num_epochs = 50000
+num_epochs = 30000
 lambda1 = 0.005
+lambda3=0
 lambda2 = 0
 
 for i in range(num_epochs):
@@ -87,9 +88,10 @@ for i in range(num_epochs):
     criterion = nn.MSELoss()
 
     lin_params = t.cat([x.view(-1) for x in net.fc1.parameters()])
-    L1_regularisation = lambda1 * t.norm(lin_params, 1)
+    L1_regularisation = lambda1 * t.norm(lin_params, 1)+lambda3 * t.norm(lin_params, 2)
+
     lin_params2 = t.cat([x.view(-1) for x in net.fc2.parameters()])
-    L1_regularisation1 = lambda2 * t.norm(lin_params, 1)
+    L1_regularisation1 = lambda2 * t.norm(lin_params, 2)
     loss = criterion(output, target)+L1_regularisation + L1_regularisation1
 
     loss.backward()
