@@ -15,7 +15,7 @@ _These are the proceedure we have used_
 <ol>
   <li>Filtering and Preprocessing
      <ul>
-      <li>Removal of NaN values and outlier points( `|x-\mu|\geq 4\signma`)  </li>
+      <li>Removal of NaN values and outlier points( ```|x-\mu|\geq 4\signma```)  </li>
       <li>Removal of 50Hz Line noise using spectral interpolation  </li>
      </ul>
    <\li>
