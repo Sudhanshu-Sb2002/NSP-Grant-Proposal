@@ -6,7 +6,8 @@ We use the following parameters from pateints undergoing surgery with the anaest
   <li>Raw EEG < \li>
   <li>Heart Rate < \li>
   <li>0_2 Saturation < \li>
-  <li>Respiration rate < \li> < \ul>
+  <li>Respiration rate < \li> 
+< \ul>
 We use the data of 4 pateints from the study (https://journals.lww.com/anesthesia-analgesia/Fulltext/2012/03000/University_of_Queensland_Vital_Signs_Dataset_.15.aspx). We finnaly give one score \epsilon [0,1] which indicates how awake the patient is. We Compare our value to a standard parameter BIS.
 
 ## Our approach:
@@ -34,6 +35,8 @@ _These are the proceedure we have used_
      </ul>
     </li>
   <li>Neural Network
-     To find the right combination of these parameters, We train a basic Neurla Network with 1 hidden layer. The Neural Network is (11 X 5 X 1), with L1 regularisation in the First Layer(so that parameters that are partciularly not useful are discarded) </li>
+
+     To find the right combination of these parameters, We train a basic Neurla Network with 1 hidden layer. The Neural Network is (11 X 5 X 1), with L1 regularisation in the First Layer(so that parameters that are partciularly not useful are discarded) 
+  </li>
 </ol>
 
