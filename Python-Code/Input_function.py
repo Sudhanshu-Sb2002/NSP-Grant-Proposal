@@ -9,6 +9,7 @@ def import_data1(path=None):
 
     for i in range(datamatrix.shape[1]):
         datamatrix[:, i] = nan_helper(datamatrix[:, i])
+    sio.savemat("interpolated_data.mat", {'datamatrix': datamatrix})
    # train_data = np.concatenate((datamatrix[0:550], datamatrix[-528:]), axis=0)
     train_data = datamatrix[:-200]
     test_data = datamatrix[-200:]
