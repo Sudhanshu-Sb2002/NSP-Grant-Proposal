@@ -3,10 +3,10 @@
  Measuring depth of anaesthesia using entropy of EEG signals, and body vitals. 
 We use the following parameters from pateints undergoing surgery with the anaesthesia: 
 <ul>
-  <li>Raw EEG < /li>
-  <li>Heart Rate < /li>
-  <li>0_2 Saturation < /li>
-  <li>Respiration rate < /li> 
+  <li>Raw EEG </li>
+  <li>Heart Rate </li>
+  <li>0_2 Saturation </li>
+  <li>Respiration rate </li> 
 < /ul>
 We use the data of 4 pateints from the study (https://journals.lww.com/anesthesia-analgesia/Fulltext/2012/03000/University_of_Queensland_Vital_Signs_Dataset_.15.aspx). We finnaly give one score \epsilon [0,1] which indicates how awake the patient is. We Compare our value to a standard parameter BIS.
 
